@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Khooudiiii 🎉</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow: hidden;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 60px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: glow 2s infinite alternate;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: 15px;
+        }
+
+        .cake {
+            font-size: 4rem;
+            margin-top: 20px;
+            animation: bounce 1.5s infinite;
+        }
+
+        .music-btn {
+            margin-top: 25px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
+            .music-btn:hover {
+                transform: scale(1.05);
+            }
+
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            width: 50px;
+            height: 70px;
+            border-radius: 50%;
+            animation: rise 6s linear infinite;
+            opacity: 0.8;
+            z-index: 1;
+        }
+
+            .balloon::after {
+                content: '';
+                position: absolute;
+                top: 70px;
+                left: 50%;
+                width: 2px;
+                height: 40px;
+                background: #555;
+            }
+
+            .balloon:nth-child(1) {
+                left: 10%;
+                background: #ff4d4d;
+                animation-delay: 0s;
+            }
+
+            .balloon:nth-child(2) {
+                left: 30%;
+                background: #4dd2ff;
+                animation-delay: 2s;
+            }
+
+            .balloon:nth-child(3) {
+                left: 50%;
+                background: #ffd24d;
+                animation-delay: 4s;
+            }
+
+            .balloon:nth-child(4) {
+                left: 70%;
+                background: #b84dff;
+                animation-delay: 1s;
+            }
+
+            .balloon:nth-child(5) {
+                left: 90%;
+                background: #4dff88;
+                animation-delay: 3s;
+            }
+
+        @keyframes rise {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-120vh);
+            }
+        }
+
+        @keyframes float {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes bounce {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #ff6a00;
+            }
+
+            to {
+                text-shadow: 0 0 20px #ee0979;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+
+    <div class="card">
+        <h1>Happy Birthday Kholudiii!</h1>
+        <p>Wishing you lots of joy, love, and happiness 🎂</p>
+        <div class="cake">🎉🎂🎉</div>
+
+        <!-- Music Button -->
+        <button class="music-btn" id="playMusicBtn">🎵 Play Music</button>
+
+        <!-- Hidden Audio -->
+        <audio id="birthdayMusic" loop>
+            <source src="birthday-song.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        const btn = document.getElementById("playMusicBtn");
+        const audio = document.getElementById("birthdayMusic");
+
+        btn.addEventListener('click', () => {
+            audio.play().catch(err => {
+                alert("Click OK to start the music 🎵");
+            });
+        });
+    </script>
+
+</body>
+</html>
